@@ -172,6 +172,9 @@ export GOVMOMI_USERNAME=infraapi@vcenterfra.local
 export GOVMOMI_PASSWORD="&^cUg8FCcbn&(C"
 export GOVMOMI_INSECURE=true
 
+# automatically add ip to xhost
+export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+xhost + $IP
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
