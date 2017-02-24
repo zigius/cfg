@@ -162,16 +162,6 @@ fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# temp govc env variables
-export GOVC_USERNAME=infraapi@vcenterfra.local
-export GOVC_PASSWORD="&^cUg8FCcbn&(C"
-export GOVC_URL=178.162.198.100
-export GOVC_INSECURE=1
-export GOVMOMI_URL=https://178.162.198.100/sdk
-export GOVMOMI_USERNAME=infraapi@vcenterfra.local
-export GOVMOMI_PASSWORD="&^cUg8FCcbn&(C"
-export GOVMOMI_INSECURE=true
-
 # automatically add ip to xhost
 export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 xhost + $IP
