@@ -2,4 +2,7 @@ alias find_instances='sh ${HOME}/src/scripts/find_instances.sh'
 alias n=nvim
 alias vi=nvim
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias h=history
+alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias myip='curl wtfismyip.com/text'
+alias dsl='docker service ls'
+

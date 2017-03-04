@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/daniel.zinger/.oh-my-zsh
-
+export ZPLUG_HOME=/usr/local/opt/zplug
+# to use vplug uncomment the line below
+# source $ZPLUG_HOME/init.zsh
+#
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -49,7 +52,7 @@ ZSH_THEME="agnoster" # (this is one of the fancy ones)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-nvm git docker brew node npm osx web-search zsh-syntax-highlighting ssh-agent)
+plugins=(zsh-nvm git docker brew node npm osx web-search zsh-syntax-highlighting ssh-agent expand-ealias)
 
 # User configuration
 
@@ -162,22 +165,13 @@ fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# temp govc env variables
-export GOVC_USERNAME=infraapi@vcenterfra.local
-export GOVC_PASSWORD="&^cUg8FCcbn&(C"
-export GOVC_URL=178.162.198.100
-export GOVC_INSECURE=1
-export GOVMOMI_URL=https://178.162.198.100/sdk
-export GOVMOMI_USERNAME=infraapi@vcenterfra.local
-export GOVMOMI_PASSWORD="&^cUg8FCcbn&(C"
-export GOVMOMI_INSECURE=true
-
 # automatically add ip to xhost
-export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
-xhost + $IP
+# export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+# xhost + $IP
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # free range plugins
 source ${HOME}/.oh-my-zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-echo ${HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND}
+# source ${HOME}/.oh-my-zsh/custom/plugins/expand-ealias.plugin.zsh/expand-ealias.plugin.zsh
+# echo ${HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND}
