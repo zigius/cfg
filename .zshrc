@@ -1,9 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/daniel.zinger/.oh-my-zsh
 export ZPLUG_HOME=/usr/local/opt/zplug
-# to use vplug uncomment the line below
 # source $ZPLUG_HOME/init.zsh
-#
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -52,10 +50,13 @@ ZSH_THEME="agnoster" # (this is one of the fancy ones)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-nvm git docker brew node npm osx web-search zsh-syntax-highlighting ssh-agent expand-ealias)
+# export NVM_LAZY_LOAD=true
+plugins=(git docker brew zsh-syntax-highlighting ssh-agent expand-ealias)
+# plugins=(zsh-nvm git docker brew npm zsh-syntax-highlighting ssh-agent expand-ealias)
 
 # User configuration
 
+export PATH=/Applications/fman.app/Contents/SharedSupport/bin:$PATH
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -80,14 +81,7 @@ export EDITOR='nvim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # path to z file
 . /Users/daniel.zinger/z/z.sh
@@ -173,5 +167,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # free range plugins
 source ${HOME}/.oh-my-zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# source ${HOME}/.oh-my-zsh/custom/plugins/expand-ealias.plugin.zsh/expand-ealias.plugin.zsh
 # echo ${HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND}
