@@ -5,3 +5,4 @@ ealias dslogsss=docker service logs -f --tail=100
 ealias dslogss='docker service logs -f --tail=100'
 ealias dsi='docker service inspect'
 ealias ds='docker service'
+ealias c='curl'
