@@ -5,4 +5,5 @@ alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias myip='curl wtfismyip.com/text'
 alias dsl='docker service ls'
 alias s='git checkout staging'
+alias "ij=open -a /Applications/IntelliJ\ IDEA.app"
 
