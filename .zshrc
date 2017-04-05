@@ -51,7 +51,7 @@ ZSH_THEME="agnoster" # (this is one of the fancy ones)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # export NVM_LAZY_LOAD=true
-plugins=(git docker brew zsh-syntax-highlighting ssh-agent expand-ealias)
+plugins=(zsh-nvm git docker brew zsh-syntax-highlighting ssh-agent expand-ealias)
 # plugins=(zsh-nvm git docker brew npm zsh-syntax-highlighting ssh-agent expand-ealias)
 
 # User configuration
@@ -168,3 +168,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # free range plugins
 source ${HOME}/.oh-my-zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # echo ${HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Setting ag as the default source for fzf
+# export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!.git/*"'
+
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='-e'
