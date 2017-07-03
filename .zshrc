@@ -1,13 +1,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/daniel.zinger/.oh-my-zsh
 export ZPLUG_HOME=/usr/local/opt/zplug
+export COMPLIANCE_HOME=$HOME/compliance
+
 # source $ZPLUG_HOME/init.zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster" # (this is one of the fancy ones)
-
+DEFAULT_USER="daniel.zinger"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -51,10 +53,11 @@ ZSH_THEME="agnoster" # (this is one of the fancy ones)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # export NVM_LAZY_LOAD=true
-plugins=(zsh-nvm git docker brew zsh-syntax-highlighting ssh-agent expand-ealias)
-# plugins=(zsh-nvm git docker brew npm zsh-syntax-highlighting ssh-agent expand-ealias)
+# plugins=(git docker brew zsh-syntax-highlighting ssh-agent expand-ealias)
+plugins=(zsh-nvm git docker brew npm zsh-syntax-highlighting ssh-agent expand-ealias)
 
 # User configuration
+# export PATH=$PATH:$HOME/anaconda3/bin
 
 export PATH=/Applications/fman.app/Contents/SharedSupport/bin:$PATH
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
@@ -136,6 +139,9 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 setopt HIST_IGNORE_ALL_DUPS
+export HISTSIZE=10000000
+export SAVEHIST=$HISTSIZE
+
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
   MODE_INDICATOR="%{$fg_bold[red]%}<%{$fg[red]%}<<%{$reset_color%}"

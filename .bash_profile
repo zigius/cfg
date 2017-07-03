@@ -17,3 +17,6 @@ export GOPATH=$HOME/Go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/Users/daniel.zinger/anaconda3/bin:$PATH"
