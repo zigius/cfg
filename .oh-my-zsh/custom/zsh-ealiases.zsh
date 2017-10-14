@@ -7,4 +7,6 @@ ealias dslogs='docker service logs -f --tail=100'
 ealias dslogss='docker service logs -f --tail=100'
 ealias dslogsss=docker service logs -f --tail=100
 ealias dsp='docker service ps'
+ealias gc='git clone'
+ealias gco='git checkout'
 ealias h='history | grep'

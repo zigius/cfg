@@ -20,3 +20,5 @@ export PATH=$PATH:$GOROOT/bin
 
 # added by Anaconda3 4.4.0 installer
 export PATH="/Users/daniel.zinger/anaconda3/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"

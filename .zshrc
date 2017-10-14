@@ -2,7 +2,7 @@
 export ZSH=/Users/daniel.zinger/.oh-my-zsh
 export ZPLUG_HOME=/usr/local/opt/zplug
 export COMPLIANCE_HOME=$HOME/compliance
-
+export HTML_TIDY=$HOME/.htmltidyrc
 # source $ZPLUG_HOME/init.zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -58,15 +58,22 @@ plugins=(zsh-nvm git docker brew npm zsh-syntax-highlighting ssh-agent expand-ea
 
 # User configuration
 # export PATH=$PATH:$HOME/anaconda3/bin
-
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH=/Applications/fman.app/Contents/SharedSupport/bin:$PATH
+export PATH=/usr/bin/osascript:$PATH
+test -e ~/.dircolors/dircolors.256dark && \
+   eval `dircolors -b ~/.dircolors/dircolors.256dark`
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-
+source $HOME/.private/.env
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -113,6 +120,8 @@ zle -N edit-command-line
 
 
 bindkey -v
+export KEYTIMEOUT=40
+bindkey -M viins 'kj' vi-cmd-mode  # @todo - THIS DOES NOT WORK?
 
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
@@ -185,3 +194,9 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='-e'
+
+# Temp govmomi stuff
+export GOVMOMI_URL="vcenter.ironsrc.local"
+export GOVMOMI_INSECURE=true
+export GOVC_URL="vcenter.ironsrc.local"
+export GOVC_INSECURE=1
