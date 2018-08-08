@@ -3,6 +3,7 @@ export ZSH=/Users/daniel.zinger/.oh-my-zsh
 export ZPLUG_HOME=/usr/local/opt/zplug
 export COMPLIANCE_HOME=$HOME/compliance
 export HTML_TIDY=$HOME/.htmltidyrc
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 # source $ZPLUG_HOME/init.zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,7 +56,6 @@ DEFAULT_USER="daniel.zinger"
 # export NVM_LAZY_LOAD=true
 # plugins=(git docker brew zsh-syntax-highlighting ssh-agent expand-ealias)
 plugins=(zsh-nvm git docker brew npm zsh-syntax-highlighting ssh-agent expand-ealias)
-
 # User configuration
 # export PATH=$PATH:$HOME/anaconda3/bin
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -188,15 +188,17 @@ source ${HOME}/.oh-my-zsh/plugins/zsh-history-substring-search/zsh-history-subst
 
 # Setting ag as the default source for fzf
 # export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 # export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!.git/*"'
 
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='-e'
 
-# Temp govmomi stuff
-export GOVMOMI_URL="vcenter.ironsrc.local"
-export GOVMOMI_INSECURE=true
-export GOVC_URL="vcenter.ironsrc.local"
-export GOVC_INSECURE=1
+# if [[ -f /usr/lib/python3.4/site-packages/powerline/bindings/tmux/powerline.conf ]]; then
+#     tmux source "/Users/daniel.zinger/.pyenv/versions/3.5.2/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf"
+# fi
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
